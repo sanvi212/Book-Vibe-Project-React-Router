@@ -5,9 +5,9 @@ const Navbar = () => {
     
     const links = <>
 
-            <div className='flex gap-4 text-lg font-bold'>
+            <div className='flex gap-4 text-lg font-bold text-[#131313CC]'>
             <Link to='/'><li>Home</li></Link>
-            <li>Listed Books</li>
+            <Link to='/listedBook'><li className='cursor-pointer'>Listed Books</li></Link>
             <Link to='./about'><li>About</li></Link>
             <li>Pages to Read</li>
             </div>
@@ -15,7 +15,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar mt-4">
+            <div className="navbar pt-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,8 +35,8 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-3 text-lg">
-        <a className="btn bg-[#23BE0A] text-white p-4 w-[116px] h-[57px] rounded-[8px]">Sign In</a>
-        <a className="btn bg-[#59C6D2] text-white p-4 w-[116px] h-[57px] rounded-[8px]">Sign Up</a>
+        <a className="btn bg-[#23BE0A] text-white p-4 w-[116px] h-[57px] rounded-[8px] border-none">Sign In</a>
+        <a className="btn bg-[#59C6D2] text-white p-4 w-[116px] h-[57px] rounded-[8px] border-none">Sign Up</a>
       </div>
     </div>
         </div>

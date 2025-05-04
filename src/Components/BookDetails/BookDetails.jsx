@@ -1,5 +1,9 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { addToStoredDb } from '../../utility/addToDB';
+// import Swal from 'sweetalert2'
+// import withReactContent from 'sweetalert2-react-content'
+// const MySwal = withReactContent(Swal)
 
 const BookDetails = () => {
 
@@ -9,6 +13,15 @@ const BookDetails = () => {
     const singleBook = data.find(book => book.bookId === bookId);
     const {bookName, category, author, image, rating, tags, review, totalPages, publisher, yearOfPublishing} = singleBook;
     // console.log(singleBook)
+
+    const handleMarkAsRead = id => {
+        // store with id
+        // where to store
+        // arry of collection
+        // if book already exist the show a alert
+        // if book net exist then push in the conlection or array
+        addToStoredDb(id);
+    }
 
     return (
         <div className='flex mb-48 mt-12'>
@@ -46,7 +59,7 @@ const BookDetails = () => {
             </div>
             {/* buttons */}
             <div className='flex gap-4 font-bold items-center'>
-                <button className='btn p-5 bg-white h-14 w-24'>Read</button>
+                <button onClick={() => handleMarkAsRead(id)} className='border rounded-lg flex items-center justify-center p-5 bg-white h-14 w-24 text-black border-[#131313]'>Read</button>
                 <button className='p-5 btn bg-[#50B1C9] border-none text-white w-32 h-14'>Wishlist</button>
             </div>
         </div>
